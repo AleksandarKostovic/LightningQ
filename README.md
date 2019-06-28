@@ -3,7 +3,7 @@ LightningQ is a blueprint for design and manufacturing of Optical Quantum Comput
 
 ## How to build
 
-In order to build the GDS files yourself, you need [Nazca](https://nazca-design.org), Ipython and Pycliper python packages.
+In order to build the GDS files yourself, you need [Nazca](https://nazca-design.org), Ipython and Pycliper Python 3 packages.
 
 When those are installed, follow the following steps:
 1. `cd LightningQ`
