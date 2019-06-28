@@ -57,22 +57,33 @@ with nd.Cell("Qubit2") as qubit2:
     demo.shallow.strt(length=20).put()
     demo.shallow.sinebend(distance=100, offset=200).put()
 
-
+    
+with nd.Cell("Direction Coupler") as dc:
+    demo.shallow.sinebend(distance=100, offset=200).put(0, 50)
+    demo.shallow.strt(length=20).put()
+    demo.shallow.sinebend(distance=100, offset=-200).put()
+    demo.shallow.sinebend(distance=100, offset=-200).put(0, -50)
+    demo.shallow.strt(length=20).put()
+    demo.shallow.sinebend(distance=100, offset=200).put()
+    
 qubit.put(0)
-"""
 qubit.put(740)
-qubit2.put(1480)
+qubit.put(1480)
+dc.put(2220)
 
 qubit.put(0, -520)
 qubit.put(740, -520)
-qubit2.put(1480, -520)
+qubit.put(1480, -520)
+dc.put(2220, -520)
 
 qubit.put(0, -1040)
 qubit.put(740, -1040)
-qubit2.put(1480, -1040)
+qubit.put(1480, -1040)
+dc.put(2220, -1040)
 
 qubit.put(0, -1560)
 qubit.put(740, -1560)
-qubit2.put(1480, -1560)
-"""
+qubit.put(1480, -1560)
+dc.put(2220, -1560)
+
 nd.export_gds()
