@@ -68,10 +68,12 @@ with nd.Cell("Qubit") as qubit:
 with nd.Cell("Direction Coupler") as dc:
     demo.shallow.sinebend(distance=100, offset=240).put(0)
     demo.shallow.strt(length=20).put()
-    demo.shallow.sinebend(distance=100, offset=-240).put()
+    demo.shallow.sinebend(distance=100, offset=-220).put()
+    demo.shallow.strt(length=10).put()
     demo.shallow.sinebend(distance=100, offset=-240).put(0, -20)
     demo.shallow.strt(length=20).put()
-    demo.shallow.sinebend(distance=100, offset=240).put()
+    demo.shallow.sinebend(distance=100, offset=220).put()
+    demo.shallow.strt(length=10).put()
 
 # First Qubit
 qubit.put(0)
