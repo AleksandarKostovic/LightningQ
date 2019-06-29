@@ -72,17 +72,22 @@ with nd.Cell("Direction Coupler") as dc:
     demo.shallow.sinebend(distance=100, offset=-200).put(0, -50)
     demo.shallow.strt(length=20).put()
     demo.shallow.sinebend(distance=100, offset=200).put()
-    
+
+# First Qubit
 qubit.put(0)
 dc.put(2220)
 
+# Second Qubit
 qubit.put(0, -520)
 dc.put(2220, -520)
 
+# Third Qubit
 qubit.put(0, -1040)
 dc.put(2220, -1040)
 
+# Fourth Qubit
 qubit.put(0, -1560)
 dc.put(2220, -1560)
 
+# Export a GDS file
 nd.export_gds()
