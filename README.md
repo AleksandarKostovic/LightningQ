@@ -4,7 +4,6 @@ LightningQ is a blueprint for design and manufacturing of Optical Quantum Comput
 ## How to build
 
 In order to build the GDS files yourself, you need [Nazca](https://nazca-design.org), Ipython and Pycliper Python 3 packages.
-
 When those are installed, follow the following steps:
 1. `git clone https://github.com/AleksandarKostovic/LightningQ`
 2. `cd LightningQ`
@@ -15,4 +14,18 @@ For layout viewer it is reccomended to use Klayout.
 
 ## Contributing
 
-If you would like to contribute to the project, please start a pull request with your improvements. Help is very much wanted especially with documentation, which will come soon.
+If you would like to contribute to the project, please start a pull request with your improvements. I would be interested to see the changes.
+
+## Adding more Qubits
+
+Here, in the existing code you can build a system for four qubits, however, you can do it as much as you like, where you could for example have 5, 6, 7 or more. Its up to you.
+
+For adding more qubits, simply add these lines before `nd.export_gds()` function:
+
+```python
+dec.put(0 , -2080)
+qubit.put(110, -2080)
+dc.put(1670, -2080)
+```
+As Nazca uses X and Y axes to define position for items, you can add Qubit by just adding 520 to the `-2080` number, with each qubit added. So you end up with `-2600` for every position of these tree devices. For more info about numbering system in Nazca, please consult this [excellent online manual](https://nazca-design.org/manual/getting_started.html).
+
