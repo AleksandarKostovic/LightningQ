@@ -30,7 +30,6 @@ import nazca.demofab as demo
 # Mach-Zehnder Interferometer- MZI
 with nd.Cell("MZI") as mzi:
     # Upper arm
-    #demo.shallow.sinebend(distance=100, offset=-40).put(0, 50)
     demo.shallow.strt(length=10).put(0)
     demo.shallow.sinebend(distance=100, offset=40).put()
     demo.s2d().put()
@@ -38,21 +37,18 @@ with nd.Cell("MZI") as mzi:
     demo.d2s().put()
     demo.shallow.sinebend(distance=100, offset=-40).put()
     demo.shallow.strt(length=10).put()
-    #demo.shallow.sinebend(distance=100, offset=40).put()
     # Pads
     pad1 = demo.pad_dc().put(ps.pin["c0"].move(300, 200, 0))
     demo.metaldc.sbend_p2p(ps.pin["c0"], Lstart=200).put()
     pad2 = demo.pad_dc().put(ps.pin["c1"].move(300, 100, 0))
     demo.metaldc.sbend_p2p(ps.pin["c1"], Lstart=200).put()
     # Lower arm
-    #demo.shallow.sinebend(distance=100, offset=40).put(0, -50)
     demo.shallow.strt(length=10).put(0, -20)
     demo.shallow.sinebend(distance=100, offset=-40).put()
     demo.shallow.strt(length=300).put()
     demo.shallow.sinebend(distance=100, offset=40).put()
     demo.shallow.strt(length=10).put()
-    #demo.shallow.sinebend(distance=100, offset=-40).put()
-    #Pinzz
+    #Pins
     nd.Pin('c0', pin=demo.eopm_dc().pin['c0']).put()
     nd.Pin('c1', pin=demo.eopm_dc().pin['c1']).put()
     nd.Pin('c2', pin=demo.eopm_dc().pin['c0']).put()
@@ -66,10 +62,12 @@ with nd.Cell("Qubit") as qubit:
 
 # Directional Coupler
 with nd.Cell("Direction Coupler") as dc:
+    # Upper Arm
     demo.shallow.sinebend(distance=100, offset=240).put(0)
     demo.shallow.strt(length=20).put()
     demo.shallow.sinebend(distance=100, offset=-220).put()
     demo.shallow.strt(length=10).put()
+    # Lower Arm
     demo.shallow.sinebend(distance=100, offset=-240).put(0, -20)
     demo.shallow.strt(length=20).put()
     demo.shallow.sinebend(distance=100, offset=220).put()
@@ -77,9 +75,10 @@ with nd.Cell("Direction Coupler") as dc:
 
 # De-Coupler
 with nd.Cell("De-Coupler") as dec:
+    # Upper Arm
     demo.shallow.sinebend(distance=100, offset=-40).put(0, 40)
     demo.shallow.strt(length=10).put()
-   
+    # Lower Arm
     demo.shallow.sinebend(distance=100, offset=40).put(0, -60)
     demo.shallow.strt(length=10).put()
  
