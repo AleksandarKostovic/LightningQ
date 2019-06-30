@@ -29,3 +29,6 @@ dc.put(1670, -2080)
 ```
 As Nazca uses X and Y axes to define position for items, you can add Qubit by just adding 520 to the `-2080` number, with each qubit added. So you end up with `-2600` for every position of these tree devices. For more info about numbering system in Nazca, please consult this [excellent online manual](https://nazca-design.org/manual/getting_started.html).
 
+## Documentation
+
+Please see `/doc` directory, where you will find a paper that explains how the idea came to be and how it works.
