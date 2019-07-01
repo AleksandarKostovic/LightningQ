@@ -25,7 +25,7 @@ For adding more qubits, simply add these lines before `nd.export_gds()` function
 ```python
 qubit.put(0, -2080)
 ```
-As Nazca uses X and Y axes to define position for items, you can add Qubit by just adding 520 to the `-2080` number, with each qubit added. So you end up with `-2600` for next position. As long as you keep adding 520 to teh negatie number, number of Qubits will rise(you have to call a qubit.put function of course, every time you want to add a Qubit). For more info about numbering system in Nazca, please consult this [excellent online manual](https://nazca-design.org/manual/getting_started.html).
+As Nazca uses X and Y axes to define position for items, you can add Qubit by just adding 520 to the `-2080` number, with each qubit added. So you end up with `-2600` for next position. As long as you keep adding 520 to teh negatie number, number of Qubits will rise(you have to call a qubit.put function of course, every time you want to add a Qubit). You can of course add a qubit above the first one, as the design is flexible, but you mush keep the 520 distance in order to avoid electrical damages to the circuit. For more info about numbering system in Nazca, please consult this [excellent online manual](https://nazca-design.org/manual/getting_started.html).
 
 ## Documentation
 
