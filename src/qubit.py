@@ -53,13 +53,7 @@ with nd.Cell("MZI") as mzi:
     nd.Pin('c1', pin=demo.eopm_dc().pin['c1']).put()
     nd.Pin('c2', pin=demo.eopm_dc().pin['c0']).put()
     nd.Pin('c3', pin=demo.eopm_dc().pin['c1']).put()
-
-# Qubit constructed from three MZIs
-with nd.Cell("Qubit") as qubit:
-    mzi.put(0)
-    mzi.put(520)
-    mzi.put(1040)
-
+    
 # Directional Coupler
 with nd.Cell("Direction Coupler") as dc:
     # Upper Arm
@@ -81,27 +75,27 @@ with nd.Cell("De-Coupler") as dec:
     # Lower Arm
     demo.shallow.sinebend(distance=100, offset=40).put(0, -60)
     demo.shallow.strt(length=10).put()
- 
 
+# Qubit constructed from three MZIs
+with nd.Cell("Qubit") as qubit:
+    dec.put(0)
+    mzi.put(110)
+    mzi.put(630)
+    mzi.put(1150)
+    dc.put(1670)
+
+ 
 # First Qubit
-dec.put(0)
-qubit.put(110)
-dc.put(1670)
+qubit.put(0)
 
 # Second Qubit
-dec.put(0, -520)
-qubit.put(110, -520)
-dc.put(1670, -520)
+qubit.put(0, -520)
 
 # Third Qubit
-dec.put(0, -1040)
-qubit.put(110, -1040)
-dc.put(1670, -1040)
+qubit.put(0, -1040)
 
 # Fourth Qubit
-dec.put(0, -1560)
-qubit.put(110, -1560)
-dc.put(1670, -1560)
+qubit.put(0, -1560)
 
 # Export a GDS file
 nd.export_gds()
