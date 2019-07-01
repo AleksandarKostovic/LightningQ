@@ -29,4 +29,4 @@ As Nazca uses X and Y axes to define position for items, you can add Qubit by ju
 
 ## Documentation
 
-Please see `/doc` directory, where you will find a paper that explains how the idea came to be and how it works.
+Please see `doc` directory, where you will find a paper that explains how the idea came to be and how it works.
