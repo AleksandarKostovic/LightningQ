@@ -12,6 +12,8 @@ When those are installed, follow the following steps:
 
 For layout viewer it is reccomended to use Klayout.
 
+If you wish to see only a a plot image of the design(which you can save as PNG image), you can just replace `export_gds()` function with `export_plt()` and get it.
+
 ## Contributing
 
 If you would like to contribute to the project, please start a pull request with your improvements. I would be interested to see the changes.
